@@ -1,0 +1,64 @@
+.logo {
+    display: block;
+    width: 221px;
+    height: 78px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain
+
+}
+header{
+    display: flex;
+    justify-content: space-between; /* Horisontal centrering */
+    align-items: center;     /* Vertikal centrering */
+    height: 120px;
+    width: 955px;
+    margin-right: 375px;
+    margin-left: 365px;
+}
+.nav_link {
+    list-style: none;           /* Fjerner prikker */
+    display: flex;              /* Lægger dem på én linje */
+    gap: 40px;                  /* Mellemrum mellem links (valgfrit) */
+    margin-left: 160px;
+    padding: 0;
+    align-items: center;
+    cursor: pointer
+
+}
+.nav_link a {
+    text-decoration: none;
+    color: #818285;
+    font-family: sans-serif;
+    font-size: 14px;
+
+}
+.nav_link a:hover {
+    color: #af161e;
+}
+
+h1{
+    font-weight: 100;
+    font-size: 20px;
+    color: #818285;
+    margin-right: 225px;
+    margin-bottom: 1px;
+    align-items: center;
+}
+.description{
+    height: 100px;
+    width: 300px;
+}
+.form_createWorkshop{
+    display: flex;
+    justify-content: space-between; /* Horisontal centrering */
+    align-items: center;
+    margin-right: 375px;
+    margin-left: 365px;
+    margin-bottom: 100px;
+    height: 300px;
+    width: 200px;
+}
+.name{
+    width: 300px;
+}
