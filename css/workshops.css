@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html, body {
+    height: 100%;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* Fylder al ledig plads */
+}
+
+.logo {
+    display: flex;
+    width: 221px;
+    height: 78px;
+    justify-content: left;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain
+}
+
+header, .logo {
+    justify-content: left;
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between; /* Horisontal centrering */
+    align-items: center;     /* Vertikal centrering */
+    height: 120px;
+    width: 955px;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+.nav_link {
+    list-style: none;           /* Fjerner prikker */
+    display: flex;              /* Lægger dem på én linje */
+    gap: 40px;                  /* Mellemrum mellem links (valgfrit) */
+    margin-left: 160px;
+    padding: 0;
+    align-items: center;
+    cursor: pointer
+
+}
+.nav_link a {
+    text-decoration: none;
+    color: #818285;
+    font-family: sans-serif;
+    font-size: 14px;
+
+}
+.nav_link a:hover {
+    color: #af161e;
+}
+
+.titel {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 120px;
+    font-size: 20px;
+    color: #818285;
+    font-weight: lighter;
+    font-family: Poppins, sans-serif;
+}
+
+#workshopList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* eller flex-start hvis du vil venstrejustere */
+    padding: 20px;
+}
+
+.workshopCard {
+    flex: 1 1 500px;
+    max-width: 500px;
+    box-sizing: border-box;
+
+    display: flex;
+    border: 1px solid #8b0000;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.workshopCard:hover {
+    background-color: #fff3e0;
+}
+
+.workshopDate {
+    width: 120px;
+    height: 70px;
+    text-align: center;
+    font-weight: 300px;
+    font-size: 20px;
+    font-family: Poppins, sans-serif;
+    align-content: center;
+    background-color: #ad1b27;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-right: 15px;
+}
+
+.workshopInfo h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+}
+
+.workshopInfo p {
+    margin: 0;
+    color: #555;
+}
+
+footer {
+    background-color: #8b0000;
+    color: white;
+    text-align: center;
+    padding: 80px 10px;
+    font-style: italic;
+    font-size: 25px;
+}
+
+footer a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+#navn {
+    margin-top: 5px;
+    font-style: normal;
+}
+
+.topSite {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    max-height: 1000px; /* Ændret fra height */
+    overflow: hidden;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500&display=swap');
+
+#infoBoks {
+    background-color: #8b0000;
+    font-size: 24px;
+    color: #ffecec;
+    align-content: center;
+    padding-bottom: 100px;
+
+}
+
+.text h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+
+.text h3 {
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+
+.text p{
+    font-family: 'Poppins', sans-serif;  /* Til underskrift */
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.text h1,
+.text h3,
+.text p {
+    margin: 10px 0; /* Tilføjer luft mellem tekst-elementer */
+    padding-left: 60px;
+}
+
+#billede img {
+    width: 100%;
+    height: auto; /* Bevarer aspect ratio */
+    max-height: 500px; /* Begrænser maksimal højde */
+    object-fit: cover;
+}
