@@ -1,0 +1,68 @@
+/* Style the form container */
+.login-form {
+    max-width: 400px;
+    margin: 50px auto; /* Center horizontally with space above */
+    padding: 30px;
+    background-color: #fff; /* Match your background style if needed */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between fields */
+}
+
+/* Style the title */
+.login-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: #818285; /* Match your color scheme */
+    margin-bottom: 10px;
+}
+
+/* Style form groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style labels */
+.form-group label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #818285;
+}
+
+/* Style inputs */
+.form-group input {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #af161e; /* Match hover color of links */
+    outline: none;
+}
+
+/* Style the submit button */
+.login-button {
+    padding: 14px;
+    background-color: #747876; /* Or match your theme */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #af161e;
+}
