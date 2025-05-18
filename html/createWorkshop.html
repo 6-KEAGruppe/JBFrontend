@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Workshop</title>
+  <link rel="stylesheet" href="../css/indexStyle.css">
+</head>
+
+<body>
+<header>
+  <div class="JBlogo">
+    <a href="https://www.jb-consulting.dk/" title="JBConsulting">
+      <img src="image/logo.png" alt="JBConsulting logo" class="logo" >
+    </a>
+  </div>
+  <h1>OPRET NY WORKSHOP</h1>
+</header>
+
+  <form class="form_createWorkshop" action="http://localhost:8080/workshops/create" method="post" >
+    <div class="left-column">
+      <input class="name" type="text" name="name" placeholder=" Navn:" required>
+      <br>
+      <br>
+      <textarea class="description" name="description" placeholder=" Beskrivelse:" required></textarea>
+      <br>
+      <br>
+      <input type="url" class="link" placeholder=" Link:" required>
+      <br>
+      <br>
+      <div class="date">
+        <label for="day">Dag:</label>
+        <select id="day" required></select>
+        <label for="month">Måned:</label>
+        <select id="month" required></select>
+        <label for="year">År:</label>
+        <select id="year" required></select>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <div class="image-preview" id="imagePreview"></div>
+      <br>
+      <input id="imgFile" type="file" accept="image/*">
+      <button type="submit">Gem</button>
+    </div>
+  </form>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>Her bor vi</h3>
+      <p>Østre Grænsevej 12<br>
+        2680 Solrød Strand<br>
+        CVR: 32811620</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Kontakt mig</h3>
+      <p>Telefon: +45 21 26 54 38<br>
+        E-mail: jb@jb-consulting.dk<br>
+        Besøg mig på Facebook<br><br>
+        <a href="#">Privatlivspolitik</a>
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <img src="image/logo.png" alt="JBConsulting logo" class="logo" >
+    </div>
+  </div>
+</footer>
+<script src="/js/createWorkshop.js" type="module"></script>
+</body>
+</html>
