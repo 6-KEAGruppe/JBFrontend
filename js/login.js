@@ -1,4 +1,4 @@
-const form = document.querySelector("#login-form");
+const form = document.querySelector(".login-form");
 
 form.addEventListener("submit", async(event) =>{
     event.preventDefault()
@@ -19,7 +19,7 @@ form.addEventListener("submit", async(event) =>{
         const result = await response.json();
 
         if(result){
-            window.location.href = "Det link der skal direktes til"
+            window.location.href = "https://www.jb-consulting.dk/"
         }
         else{
             alert("Wrong Password or Username")
