@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/workshops.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <div class="JBlogo">
+        <a href="https://www.jb-consulting.dk/" title="JBConsulting">
+            <img src="images/logo.png" alt="JBConsulting logo" class="logo" >
+        </a>
+    </div>
+    <div>
+        <nav class="nav_link" role="navigation">
+            <ul class="nav_link">
+                <li> <a href="https://www.jb-consulting.dk/"> FORSIDE</a></li>
+                <li> <a href="https://www.jb-consulting.dk/om-jbc/vores-filosofi/"> FOLISOFI</a></li>
+                <li> <a href="https://www.jb-consulting.dk/kompetencer/dialoogle/"> DIALOOGLE</a></li>
+                <li> <a href="https://www.jb-consulting.dk/referencer/cases/"> CASES</a></li>
+                <li> <a href="https://www.jb-consulting.dk/kontakt/"> KONTAKT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <div class="topSite">
+        <div id="infoBoks">
+            <div class="text">
+                <h1 id="workshopName">Workshop</h1>
+                <h3 id="workshopDate"> Afholdes: 01-01-2026 </h3>
+                <p id="workshopDescription"> ... </p>
+                <br>
+                <form action="#" method="post" class="tilmelding" style="padding-left: 60px;">
+                    <input type="hidden" name="workshopId" value="1" style="padding: 12px;">
+                    <input type="text" name="yourname" value="Dit navn" style="padding: 12px;">
+                    <input type="text" name="youremail" value="Din e-mail" style="padding: 12px;">
+                    <input type="text" name="company" value="Din virksomhed" style="padding: 12px;">
+                    <input type="date" name="workshopDate" value="01-01-2026" style="padding: 10px;">
+                    <button type="submit" class="login-button" style="padding: 15px;">Tilmeld</button>
+                </form>
+            </div>
+        </div>
+        <div id="billede">
+            <img src="images/profil.jpg" alt="JBConsulting profil">
+        </div>
+    </div>
+
+    <div class="titel">
+        <h2>Kommende Workshops i 2025</h2>
+    </div>
+
+    <div class="workshopContainer">
+        <div id="workshopList"></div>
+    </div>
+
+</main>
+
+<footer>
+    <p>"Vi tror på at mennesker er unikke og at vi har et langt større <br>
+        potentiale, end vi umiddelbart selv er bevidste om og dermed <br>
+        kan anvende"</p>
+    <p id="navn">JB Consulting</p>
+</footer>
+
+
+<script src="js/workshop.js"></script>
+
+</body>
+</html>
