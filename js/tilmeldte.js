@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", async() => {
             let workshopElement = document.createElement("li");
             workshopElement.innerHTML = `<h3>${workshop.name}</h3>`;
 
+
             const users = await getWorkshopUsers(workshop.id);
 
             if (users.length > 0) {
@@ -38,8 +39,8 @@ document.addEventListener("DOMContentLoaded", async() => {
                     <div class="user-details">
                         <p>Name:  ${user.name || 'N/A'}</p>
                         <p>Email: ${user.email || 'N/A'}</p>
-                        <p>Phone: ${user.phoneNumber || 'N/A'}</p>
-                        <p>Company: ${user.company || 'N/A'}</p>
+                        <p>Phone: ${user.phone || 'N/A'}</p>
+                        <p>Company: ${user.company.name || 'N/A'}</p>
                     </div>
                 `;
 
