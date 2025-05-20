@@ -1,91 +1,24 @@
 console.log("Du er på en enkelt workshopside");
 
 // Hent ?name=... fra URL'en
-const params = new URLSearchParams(window.location.search);
-const name = params.get("name");
+const param = new URLSearchParams(window.location.search);
+const workshopID = param.get("wid");
 
-// API-urls
-const workshopUrl = `http://localhost:8080/workshops/name/${name}`;
+// API-url
+const workshopUrl = `http://localhost:8080/workshops/${workshopID}`;
 
-const allWorkshopsUrl = "http://localhost:8080/workshops"
-
-// Funktion til at hente data
-function fetchAnyUrl(url){
-    return fetch(url)
+// Funktion til at hente data fra eksternt (backend) api
+function fetchAnyUrl(workshopUrl){
+    return fetch(workshopUrl)
         .then(response => {
             if (!response.ok) throw new Error("Workshop ikke fundet");
             return response.json();
         })
         .catch(error => {
             console.error("Fejl ved hentning:", error);
-            alert("Kunne ikke hente workshop");
+            alert("Kunne ikke hente workshop med det angivne id");
         });
 }
-
-// Funktion til at tilføje workshop til siden
-function addWorkshopToPage(workshop){
-
-    document.title = "Workshop: " + workshop.name; // Ændrer titlen
-
-    const workshopName = document.getElementById("workshopName");
-     if (workshopName) {
-        workshopName.innerHTML = workshop.name;
-    }
-    const workshopDescription = document.getElementById("workshopDescription");
-    if (workshopDescription) {
-        workshopDescription.innerHTML = workshop.description;
-    }
-}
-
-
-// Funktion der tilføjer listen med workshops til siden ...
-function addWorkshopToFrontpage(workshop){
-
-    // the div that contains info and date
-    const workshopDiv = document.createElement("div")
-    workshopDiv.className = "workshopCard"
-
-    const dateObj = new Date(workshop.date);
-    const day = dateObj.getDate();
-    const month = dateObj.toLocaleString('da-DK', {month: "long"})
-
-
-    // the div that contains date
-    const workshopDateDiv = document.createElement("div")
-    workshopDateDiv.className = "workshopDate"
-    workshopDateDiv.innerHTML = `${month.toUpperCase()}<br>${day}`;
-
-    //the div that contains info
-    const infoDiv = document.createElement("div")
-    infoDiv.className = "workshopInfo"
-
-    const workshopName = document.createElement("h3")
-    workshopName.innerHTML = workshop.name;
-    infoDiv.appendChild(workshopName); // add to info
-
-    const workshopHost = document.createElement("p")
-    workshopHost.textContent = "Jeannie Bjerregaard"
-    infoDiv.appendChild(workshopHost); // add to info
-
-    const workshopAddress = document.createElement("p")
-    workshopAddress.textContent = workshop.address;
-    infoDiv.appendChild(workshopAddress); // add to info
-
-    // when clicking on div you will be shown the workshop page
-    workshopDiv.onclick = function (){
-        localStorage.setItem("workshop", JSON.stringify(workshop));
-        window.location.href = "workshopSide.html";
-    }
-
-    // add info and date div to the master div
-    workshopDiv.appendChild(workshopDateDiv);
-    workshopDiv.appendChild(infoDiv);
-
-    // add everything to the workshopList
-    document.getElementById("workshopList").appendChild(workshopDiv);
-
-}
-
 
 // Async-funktion der henter den specifikke workshop ...
 async function fetchWorkshopAndAddToPage(){
@@ -100,27 +33,98 @@ async function fetchWorkshopAndAddToPage(){
     }
 }
 
-// hent liste med alle workshops ...
-let workshopList = []
-async function fetchWorkshopsAndAddToFrontpage(){
-    try{
-        workshopList = await fetchAnyUrl(allWorkshopsUrl);
-        console.log(workshopList)
-        workshopList.forEach(addWorkshopToFrontpage)
-    }catch(error){
-        alert("Could not find any workshops")
+// Funktion til at tilføje workshop til sidens html ...
+function addWorkshopToPage(workshop){
+
+    document.title = "Workshop: " + workshop.name;
+ // Ændrer titlen
+    let workshopNameElements = document.getElementsByClassName("workshopName");
+    for (let element of workshopNameElements) {
+        element.innerHTML = workshop.name;
+    }
+
+    const imgElement = document.querySelector("#billede img");
+    if (imgElement && workshop.image) {
+        imgElement.src = workshop.image;
+    }
+
+    const workshopDescription = document.getElementById("workshopDescription");
+    if (workshopDescription) {
+        workshopDescription.innerHTML = workshop.description;
     }
 }
 
 
-
-// Kør når siden er klar
+// Kør funktioner, når siden er klar ...
 document.addEventListener("DOMContentLoaded", async function(){
     console.log("DOM er indlæst");
-    if (name) {
+    if (workshopID) {
         await fetchWorkshopAndAddToPage();
-        await fetchWorkshopsAndAddToFrontpage()
     } else {
-        alert("Ingen gyldig 'name'-parameter i URL");
+        alert("Intet gyldigt 'workshop-id'-parameter i URL");
     }
+});
+
+document.addEventListener("DOMContentLoaded", async function () {
+    const param = new URLSearchParams(window.location.search);
+    const workshopID = param.get("wid");
+
+    // Sæt workshopId i hidden input
+    const workshopInput = document.getElementById("workshopIdInput");
+    if (workshopInput && workshopID) {
+        workshopInput.value = workshopID;
+    }
+
+    // Lyt på form submit
+    const form = document.getElementById("tilmeldingsForm");
+    const resultDiv = document.getElementById("tilmeldingResult");
+
+    if (!form) {
+        console.error("Formular ikke fundet.");
+        return;
+    }
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault(); // Stop default form submission
+
+        const formData = {
+            name: form.yourname.value,
+            email: form.youremail.value,
+            phone: form.yourphone.value,
+            company: form.yourcompany.value,
+            workshopId: workshopInput.value
+        };
+
+        try {
+            const response = await fetch("http://localhost:8080/workshops/attend", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                resultDiv.innerText = "Tilmelding sendt! ✅";
+            } else {
+                console.log("HTTP status:", response.status);
+                const text = await response.text();
+                console.log("Respons body (tekst):", text);
+                let errorMessage = text;
+
+                try {
+                    // Hvis serveren sender JSON, prøv at parse det
+                    const json = JSON.parse(text);
+                    errorMessage = json.message || JSON.stringify(json);
+                } catch (e) {
+                    // Ikke JSON, beholder text som fejlbesked
+                }
+
+                resultDiv.innerText = "Tilmelding fejlede: " + errorMessage;
+            }
+
+
+        } catch (error) {
+            console.error("Fejl:", error);
+            resultDiv.innerText = "Der opstod en fejl under tilmelding.";
+        }
+    });
 });
