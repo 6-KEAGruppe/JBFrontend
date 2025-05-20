@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../css/workshops.css">
+    <link rel="stylesheet" href="../css/workshop.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
 </head>
@@ -32,18 +33,9 @@
     <div class="topSite">
         <div id="infoBoks">
             <div class="text">
-                <h1 id="workshopName">Workshop</h1>
-                <h3 id="workshopDate"> Afholdes: 01-01-2026 </h3>
-                <p id="workshopDescription"> ... </p>
-                <br>
-                <form action="#" method="post" class="tilmelding" style="padding-left: 60px;">
-                    <input type="hidden" name="workshopId" value="1" style="padding: 12px;">
-                    <input type="text" name="yourname" value="Dit navn" style="padding: 12px;">
-                    <input type="text" name="youremail" value="Din e-mail" style="padding: 12px;">
-                    <input type="text" name="company" value="Din virksomhed" style="padding: 12px;">
-                    <input type="date" name="workshopDate" value="01-01-2026" style="padding: 10px;">
-                    <button type="submit" class="login-button" style="padding: 15px;">Tilmeld</button>
-                </form>
+                <h1 class="workshopName">Workshop</h1>
+                <h3 id="host">Jeannie Bjerregaard</h3>
+                <p></p>
             </div>
         </div>
         <div id="billede">
@@ -52,11 +44,41 @@
     </div>
 
     <div class="titel">
-        <h2>Kommende Workshops i 2025</h2>
+        <h2 class="workshopName">Navn på workshoppen</h2>
+    </div>
+    <div class="workshopBody">
+
+        <p id="workshopDescription"> ... </p>
+        <br>
+
+        <table>
+            <tr>
+                <td>
+                    <form id="tilmeldingsForm" class="tilmelding">
+                        <input type="hidden" name="workshopId" id="workshopIdInput" value="0"> <br>
+                        <input type="text" name="yourname" placeholder="Navn:" required> <br>
+                        <input type="text" name="youremail" placeholder="E-mail:" required> <br>
+                        <input type="tel" name="yourphone" placeholder="Mobilnummer" required> <br>
+                        <input type="text" name="yourcompany" placeholder="Virksomhed" required> <br>
+                        <button type="submit" class="tilmeld">Tilmeld</button> <br>
+                    </form>
+                    <div id="tilmeldingResult"></div>
+
+                </td>
+                <td>
+                    <h3>Praktisk information</h3>
+                    <ul>
+                        <li id="workshopDate">Dato: 2021-01-01</li>
+                        <li id="workshopAddress">Adresse: Ørestad Boulevard 1, 2300 København S</li>
+                        <li id="workshopTime">Tidspunkt: 10:00 - 12:00</li>
+                        <li id="workshopCapacity">Antal pladser: 15 deltagere</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
     </div>
 
-    <div class="workshopContainer">
-        <div id="workshopList"></div>
     </div>
 
 </main>
@@ -67,7 +89,6 @@
         kan anvende"</p>
     <p id="navn">JB Consulting</p>
 </footer>
-
 
 <script src="js/workshop.js"></script>
 

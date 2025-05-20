@@ -1,0 +1,62 @@
+.workshopBody {
+    padding-top: 20px;
+    padding-right: 120px;
+    padding-left: 120px;
+    padding-bottom: 20px;
+}
+
+#workshopDescription {
+    margin-bottom: 50px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 120px 120px 0;
+}
+
+tbody {
+    width: 500px;
+}
+
+form {
+    width: 80%;
+}
+
+input {
+    padding: 12px;
+    background-color: #dddddd;
+    border-color: #dddddd;
+    border-width: 0;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+td {
+    width: 50%;
+    align-content: start;
+}
+
+button {
+    margin: auto;
+    width: 50%;
+    padding: 12px;
+    border-radius: 10px;
+    border-width: 0;
+    background-color: #dddddd;
+    cursor: pointer;
+    display: block;
+}
+
+button:hover {
+    background-color: #af161e;
+}
+
+ul {
+    padding: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
