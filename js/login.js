@@ -19,7 +19,7 @@ form.addEventListener("submit", async(event) =>{
         const result = await response.json();
 
         if(result){
-            window.location.href = "https://www.jb-consulting.dk/"
+            window.location.href = "http://localhost:63342/JBFrontend/tilmeldte.html"
         }
         else{
             alert("Wrong Password or Username")
