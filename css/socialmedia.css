@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* HEADER & LOGO */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    width: 955px;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+.logo {
+    display: flex;
+    width: 221px;
+    height: 78px;
+    justify-content: left;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.nav_link {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-left: 160px;
+    padding: 0;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav_link a {
+    text-decoration: none;
+    color: #818285;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.nav_link a:hover {
+    color: #af161e;
+}
+
+/* ØVERSTE SEKTION */
+.topSite {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+    max-height: 450px;
+    overflow: hidden;
+}
+
+#infoBoks {
+    background-color: #af161e;
+    font-size: 20px;
+    color: #ffecec;
+    align-content: center;
+    padding-bottom: 20px;
+}
+
+.text p {
+    font-family: 'museo-sans', sans-serif;
+    font-weight: 100;
+    font-size: 17px;
+    margin: 3px 0;
+    padding-left: 30px;
+}
+
+.centered-tagline {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+#billede img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* SOCIAL IKONER */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 250px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.insta-icon,
+.facebook-icon,
+.linkedin-icon {
+    font-size: 80px;
+    transition: color 0.2s;
+}
+
+.insta-icon {
+    color: crimson;
+}
+
+.insta-icon:hover {
+    color: #ec7d23;
+}
+
+.facebook-icon {
+    color: #2524ff;
+}
+
+.facebook-icon:hover {
+    color: rgba(44,47,255,0.75);
+}
+
+.linkedin-icon {
+    color: #516dff;
+}
+
+.linkedin-icon:hover {
+    color: #88a8ff;
+}
+
+.insta-tag,
+.facebook-tag,
+.linkedin-tag {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #444;
+    font-family: 'museo-sans', sans-serif;
+    text-align: center;
+}
+
+/* FOOTER */
+.site-footer {
+    background-color: #af161e;
+    color: white;
+    padding: 40px 20px;
+    font-family: 'museo-sans', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-section {
+    max-width: 300px;
+    flex: 1;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.footer-section p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+.footer-section a {
+    color: #ffdede;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-logo img {
+    max-width: 300px;
+    height: auto;
+    margin-top: 10px;
+}
