@@ -113,7 +113,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             });
 
             if (response.ok) {
-                resultDiv.innerText = "Tilmelding sendt! ✅";
+                resultDiv.innerText = "Tak for din tilmelding! ✅";
+                form.reset();
+                const formular = document.getElementById("tilmeldingsForm");
+                formular.style.display = "none";
             } else {
                 console.log("HTTP status:", response.status);
                 const text = await response.text();
