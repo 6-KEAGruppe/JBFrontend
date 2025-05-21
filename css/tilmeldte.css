@@ -1,0 +1,131 @@
+/* Centered workshops container */
+#workshopList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 500px)); /* 2 columns with min/max width */
+    gap: 30px;
+    justify-content: center; /* Center the grid items horizontally */
+    margin: 0 auto;
+    padding: 20px;
+    list-style-type: none; /* Remove bullets from the list */
+}
+
+/* Workshop item styling */
+#workshopList li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+    list-style-type: none; /* Remove any bullets */
+}
+
+#workshopList li:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Style for workshop titles */
+#workshopList h3 {
+    margin: 0 0 10px 0;
+    cursor: default; /* No longer clickable */
+    color: #333;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Style for user list container */
+.users-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: block; /* Always visible */
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+/* User item styling */
+.user-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    list-style-type: none; /* Remove bullets */
+}
+
+/* User list container */
+.users-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none; /* Remove bullets */
+}
+
+/* Style for user details inside each user item */
+.user-details {
+    display: block; /* Always visible */
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Style for the title - move more to the left */
+.titel {
+    text-align: center; /* align text to the left */
+    margin-left: 50px; /* shift title more to the left */
+    margin-bottom: 30px;
+    margin-top: 100px;
+    font-size: 24px; /* optional: slightly larger font for emphasis */
+}
+
+/* --- New styles for the top section with picture and info box --- */
+
+.topSite {
+    display: flex;
+    align-items: stretch; /* make sections same height */
+    gap: 0; /* no gap between sections */
+    margin-bottom: 40px; /* space below the top section */
+}
+
+/* Info box style */
+#infoBoks {
+    background-color: #8b0000;
+    font-size: 24px;
+    color: #ffecec;
+    padding: 20px;
+    margin: 0;
+    flex: 1; /* take available space */
+    display: flex;
+    flex-direction: column;
+    height: 300px; /* fill parent height */
+    box-sizing: border-box;
+    max-width: 600px;
+}
+
+/* Make the h2 inside info box white */
+#infoBoks h2 {
+    color: white;
+    margin-bottom: 20px; /* space below title */
+}
+
+/* Image container style */
+#billede {
+    max-width: 100%; /* or set a fixed width like 300px if preferred */
+    margin: 0;
+    display: flex;
+    align-items: stretch; /* make image fill container height */
+    flex: 1; /* take available space */
+    box-sizing: border-box;
+}
+
+/* Make the image smaller and fill container height */
+#billede img {
+    width: 100%;
+    height: 300px; /* fill container height */
+    object-fit: cover; /* cover to avoid distortion */
+    border-radius: 0; /* remove rounded edges if any */
+}
+
+/* Remove margin between info and picture sections to make them touch */
+#infoBoks, #billede {
+    margin-bottom: 0;
+}
