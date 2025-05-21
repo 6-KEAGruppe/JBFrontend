@@ -58,8 +58,8 @@
                     <form id="tilmeldingsForm" class="tilmelding">
                         <input type="hidden" name="workshopId" id="workshopIdInput" value="0"> <br>
                         <input type="text" name="yourname" placeholder="Navn:" required> <br>
-                        <input type="text" name="youremail" placeholder="E-mail:" required> <br>
-                        <input type="tel" name="yourphone" placeholder="Mobilnummer" required> <br>
+                        <input type="email" name="youremail" placeholder="E-mail:" oninvalid="this.setCustomValidity('Tjek lige din e-email igen.')" oninput="this.setCustomValidity('')" required> <br>
+                        <input type="tel" name="yourphone" placeholder="Mobilnummer" minlength="8" maxlength="12" oninvalid="this.setCustomValidity('Er det dit telefonnummer?')" oninput="this.setCustomValidity('')" required> <br>
                         <input type="text" name="yourcompany" placeholder="Virksomhed" required> <br>
                         <button type="submit" class="tilmeld">Tilmeld</button> <br>
                     </form>
