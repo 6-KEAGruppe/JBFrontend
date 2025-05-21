@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Workshop</title>
-    <link rel="stylesheet" href="../css/workshops.css">
-    <link rel="stylesheet" href="../css/workshop.css">
+    <link rel="stylesheet" href="./css/workshops.css">
+    <link rel="stylesheet" href="./css/workshop.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="icon" href="images/jbconsultingfavicon.ico">
 
@@ -58,8 +58,8 @@
                     <form id="tilmeldingsForm" class="tilmelding">
                         <input type="hidden" name="workshopId" id="workshopIdInput" value="0"> <br>
                         <input type="text" name="yourname" placeholder="Navn:" required> <br>
-                        <input type="text" name="youremail" placeholder="E-mail:" required> <br>
-                        <input type="tel" name="yourphone" placeholder="Mobilnummer" required> <br>
+                        <input type="email" name="youremail" placeholder="E-mail:" oninvalid="this.setCustomValidity('Tjek lige din e-email igen.')" oninput="this.setCustomValidity('')" required> <br>
+                        <input type="tel" name="yourphone" placeholder="Mobilnummer" minlength="8" maxlength="12" oninvalid="this.setCustomValidity('Er det dit telefonnummer?')" oninput="this.setCustomValidity('')" required> <br>
                         <input type="text" name="yourcompany" placeholder="Virksomhed" required> <br>
                         <button type="submit" class="tilmeld">Tilmeld</button> <br>
                     </form>
@@ -98,7 +98,7 @@
             <p>
                 Telefon: <a href="tel:+4521265438">+45 21 26 54 38</a><br>
                 E-mail: <a href="mailto:jb@jb-consulting.dk">jb@jb-consulting.dk</a><br>
-                <a href="socialmedia.html"> Find mig på de sociale medier<br>
+                <a href="socialmedia.html"> Find mig på de sociale medier</a><br>
                     <a href="/privatlivspolitik">Privatlivspolitik</a>
             </p>
         </div>
@@ -108,13 +108,6 @@
         </div>
     </div>
 </footer>
-
-<!--<footer>-->
-<!--    <p>"Vi tror på at mennesker er unikke og at vi har et langt større <br>-->
-<!--        potentiale, end vi umiddelbart selv er bevidste om og dermed <br>-->
-<!--        kan anvende"</p>-->
-<!--    <p id="navn">JB Consulting</p>-->
-<!--</footer>-->
 
 <script src="js/workshop.js"></script>
 
