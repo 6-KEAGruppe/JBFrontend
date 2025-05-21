@@ -47,7 +47,7 @@ function addWorkshopToFrontpage(workshop){
     // when clicking on div you will be shown the workshop page
     workshopDiv.onclick = function (){
         localStorage.setItem("workshop", JSON.stringify(workshop));
-        window.location.href = "workshopSide.html";
+        window.location.href = `workshop.html?wid=${workshop.id}`;
     }
 
     // add info and date div to the master div
