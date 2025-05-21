@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-16BR">
   <title>Create Workshop</title>
   <link rel="stylesheet" href="../css/indexStyle.css">
 </head>
 
 <body>
 <header>
-  <div class="JBlogo">
+  <div class="headerJBlogo">
     <a href="https://www.jb-consulting.dk/" title="JBConsulting">
       <img src="image/logo.png" alt="JBConsulting logo" class="logo" >
     </a>
@@ -16,33 +16,32 @@
   <h1>OPRET NY WORKSHOP</h1>
 </header>
 
-  <form class="form_createWorkshop" action="http://localhost:8080/workshops/create" method="post" >
+  <form id="wsForm" class="form_createWorkshop" action="http://localhost:8080/workshops/create" method="post">
     <div class="left-column">
-      <input class="name" type="text" name="name" placeholder=" Navn:" required>
+      <input class="name"  id="wsName" type="text" name="name" placeholder=" Navn:" required>
       <br>
       <br>
-      <textarea class="description" name="description" placeholder=" Beskrivelse:" required></textarea>
+      <textarea class="description" id="wsDescription" name="description" placeholder=" Beskrivelse:"></textarea>
       <br>
       <br>
-      <input type="url" class="link" placeholder=" Link:" required>
+      <input type="url" class="link" id="link" placeholder=" Link:" name="link" value="link">
       <br>
       <br>
-      <div class="date">
-        <label for="day">Dag:</label>
-        <select id="day" required></select>
-        <label for="month">Måned:</label>
-        <select id="month" required></select>
-        <label for="year">År:</label>
-        <select id="year" required></select>
-      </div>
+      <input class="address" id="wsAddress" type="text" placeholder="Adresse:" name="address" value="address">
+      <br>
+      <br>
+      <input class="inpDate" id="wsDate" type="date" name="date">
+      <br>
     </div>
 
     <div class="right-column">
       <div class="image-preview" id="imagePreview"></div>
       <br>
-      <input id="imgFile" type="file" accept="image/*">
-      <button type="submit">Gem</button>
+      <input id="imgFile" type="url" name="image" value="image">
+      <pre id="output"></pre>
+      <button class="saveWorkshop" id="wsSaveBtn" type="submit">Gem</button>
     </div>
+
   </form>
 <footer class="footer">
   <div class="footer-container">
@@ -58,12 +57,13 @@
       <p>Telefon: +45 21 26 54 38<br>
         E-mail: jb@jb-consulting.dk<br>
         Besøg mig på Facebook<br><br>
-        <a href="#">Privatlivspolitik</a>
+        <a href="https://www.jb-consulting.dk/wp-content/uploads/2019/11/JBC-Privatlivs-politik.pdf">Privatlivspolitik</a>
       </p>
     </div>
-
-    <div class="footer-col">
-      <img src="image/logo.png" alt="JBConsulting logo" class="logo" >
+    <div class="footerJBlogo">
+      <a href="https://www.jb-consulting.dk/" title="JBConsulting">
+        <img src="image/logo.png" alt="JBConsulting logo" class="logo" >
+      </a>
     </div>
   </div>
 </footer>

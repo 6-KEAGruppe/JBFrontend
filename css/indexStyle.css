@@ -18,7 +18,7 @@ header{
 }
 .nav_link {
     list-style: none;           /* Fjerner prikker */
-    display: flex;              /* Lægger dem på én linje */
+    display: flex;              /* L?gger dem p? ?n linje */
     gap: 40px;                  /* Mellemrum mellem links (valgfrit) */
     margin-left: 160px;
     padding: 0;
@@ -92,7 +92,8 @@ h1{
 }
 
 .footer {
-    background-color: #ad1b27;
+    background-color: #af161e;
+
     color: white;
     padding: 40px;
 }
@@ -132,4 +133,15 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+}
+.footerJBlogo{
+    background-color: #cccccc;
+    height: 7%;
+    display: block;
+    width: 221px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-bottom-right-radius: 25px;
+    margin-top: 2%;
 }
