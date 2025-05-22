@@ -37,20 +37,30 @@ async function fetchWorkshopAndAddToPage(){
 function addWorkshopToPage(workshop){
 
     document.title = "Workshop: " + workshop.name;
- // Ændrer titlen
+    // Sæt title - bemærk det er for alle med class=workshopName (for-loop) ...
     let workshopNameElements = document.getElementsByClassName("workshopName");
     for (let element of workshopNameElements) {
         element.innerHTML = workshop.name;
     }
-
+    // Sæt billede ...
     const imgElement = document.querySelector("#billede img");
     if (imgElement && workshop.image) {
         imgElement.src = workshop.image;
     }
-
+    // Sæt beskrivelsen ...
     const workshopDescription = document.getElementById("workshopDescription");
     if (workshopDescription) {
         workshopDescription.innerHTML = workshop.description;
+    }
+    // Sæt dato ...
+    const workshopDate = document.getElementById("workshopDate");
+    if (workshopDate) {
+        workshopDate.innerHTML = workshop.date;
+    }
+    // Sæt adressen ...
+    const workshopAddress = document.getElementById("workshopAddress");
+    if (workshopAddress) {
+        workshopAddress.innerHTML = workshop.address;
     }
 }
 
@@ -103,7 +113,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             });
 
             if (response.ok) {
-                resultDiv.innerText = "Tilmelding sendt! ✅";
+                resultDiv.innerText = "Tak for din tilmelding! ✅";
+                form.reset();
+                const formular = document.getElementById("tilmeldingsForm");
+                formular.style.display = "none";
             } else {
                 console.log("HTTP status:", response.status);
                 const text = await response.text();

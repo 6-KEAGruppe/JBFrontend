@@ -88,7 +88,7 @@
 
 /* Info box style */
 #infoBoks {
-    background-color: #8b0000;
+    background-color: #af161e;
     font-size: 24px;
     color: #ffecec;
     padding: 20px;
@@ -128,4 +128,24 @@
 /* Remove margin between info and picture sections to make them touch */
 #infoBoks, #billede {
     margin-bottom: 0;
+}
+
+footer {
+    background-color: #af161e;
+    color: white;
+    text-align: center;
+    padding: 80px 10px;
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 50px;
+
+}
+
+footer a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
 }
