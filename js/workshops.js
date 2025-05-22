@@ -1,3 +1,4 @@
+//ændring til at pushe
 console.log("Du er på forsiden")
 const workshopUrl = "http://localhost:8080/workshops"
 
